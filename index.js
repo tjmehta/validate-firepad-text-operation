@@ -23,17 +23,17 @@ function validateTextOperationJSON (op) {
     return // validated
   }
   // op has multiple ops..
-  var opLeft = op
+  var opLeft = op.slice()
   var opOut
   // remove start op
-  patternFound = utils.findStartPattern(op)
+  patternFound = utils.findStartPattern(opLeft)
   if (patternFound) {
     // slice it off leave positive integer on end (for middle patterns)
     opOut = opLeft.splice(0, patternFound.length - 1)
     debug('validateTextOperationJSON: startOp %o', opOut)
   }
   // remove end op
-  patternFound = utils.findEndPattern(op)
+  patternFound = utils.findEndPattern(opLeft)
   if (patternFound) {
     // slice it off, leave positive integer at start (for middle patterns)
     opOut = opLeft.splice(0 - patternFound.length - 1)
@@ -44,7 +44,7 @@ function validateTextOperationJSON (op) {
     if (opLeft.length === 1) {
       break
     }
-    patternFound = utils.findMiddlePattern(op)
+    patternFound = utils.findMiddlePattern(opLeft)
     // pattern is guaranteed to be found..
     // slice it off, leave positive integer at start (for middle patterns)
     opOut = opLeft.splice(0, patternFound.length - 1)

@@ -11,7 +11,9 @@ describe('validate-firepad-text-operation', function () {
   operations.forEach(function (op) {
     // generated test
     it('should validate valid operations: ' + JSON.stringify(op), function () {
+      // var prelen = op.length
       validate(op)
+      // expect(op.length).to.equal(prelen)
     })
   })
 
