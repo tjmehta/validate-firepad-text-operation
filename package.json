@@ -28,11 +28,8 @@
   },
   "homepage": "https://github.com/tjmehta/validate-firepad-text-operation#readme",
   "dependencies": {
-    "101": "^1.6.2",
     "assert-err": "^1.1.0",
-    "debug": "^2.2.0",
-    "object-assign": "^4.1.0",
-    "object-loops": "^0.8.0"
+    "debug": "^2.2.0"
   },
   "devDependencies": {
     "assert-100": "^1.1.0",

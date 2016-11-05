@@ -17,17 +17,32 @@ describe('validate-firepad-text-operation', function () {
     })
   })
 
-  var invalidOp = [
-    1,
-    1,
-    2,
-    -1,
-    3,
-    -1
+  var invalidOps = [
+    [
+      1,
+      1
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      -1,
+      -1
+    ],
+    [
+      'yo',
+      'yo'
+    ],
+    [
+      {}
+    ]
   ]
-  it('should error if op is invalid: invalidOp', function () {
-    expect(function () {
-      validate(invalidOp)
-    }).to.throw(/invalid/)
+  invalidOps.forEach(function (op) {
+    it('should error if op is invalid: invalidOp', function () {
+      expect(function () {
+        validate(op)
+      }).to.throw(/invalid/)
+    })
   })
 })
