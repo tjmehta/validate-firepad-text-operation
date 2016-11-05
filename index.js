@@ -14,8 +14,8 @@ function validateTextOperationJSON (op) {
   debug('validateTextOperationJSON %o', op)
   assertErr(Array.isArray(op), Error, 'operation must be an array', { op: op })
   assertErr(op.length, Error, 'operation cannot be empty', { op: op })
-  let type
-  let lastType = ''
+  var type
+  var lastType = ''
   op.forEach(function (item) {
     if (typeof item === 'string') {
       // valid
