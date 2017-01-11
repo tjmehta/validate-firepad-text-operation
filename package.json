@@ -1,6 +1,6 @@
 {
   "name": "validate-firepad-text-operation",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Validate firepad text-operation",
   "main": "index.js",
   "scripts": {
